@@ -4,12 +4,6 @@ algodat1-ss2012-pr1-tests
 test cases for algodat1 pr1
 
 
-Ressources
--------------------------
-
-  [1]: http://www.ads.tuwien.ac.at/teaching/ss12/AD1/pa_codegeruest%2Btestinstanzen.zip
-
-
 Set up everything
 -------------------------
 
@@ -45,4 +39,10 @@ Note: I tested the bash scripts with linux only.
 To clean up everything, build the code and run all the tests you can simply run
 
 	./clean.sh && ./build.sh && ./test.sh
+
+
+Resources
+-------------------------
+
+  [1]: http://www.ads.tuwien.ac.at/teaching/ss12/AD1/pa_codegeruest%2Btestinstanzen.zip
 
