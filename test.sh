@@ -5,14 +5,19 @@
 #
 
 #
-# Usage: ./test.sh [-d|-t]
-#
-# -t ... print filename and runtime
-# -d ... print debug messages
+# Usage: ./test.sh
 #
 
-# execute a single test
-#java ads1ss12.pa.Main $@ tests/input/jsnlry001
-
-# execute all tests
-find tests/input/* -exec java ads1ss12.pa.Main $@ {} \;
+# execute all tests and compare their output with the expected output
+for file in `ls tests/input`; do
+	input="tests/input/$file"
+	output="tests/output/$file"
+	myoutput="tests/output/$file.my"
+	java ads1ss12.pa.Main "$input" > "$myoutput"
+	diff "$myoutput" "$output" > /dev/null
+	if [ $? -ne 0 ]; then
+		echo "${file}: ERROR. see '${myoutput}' for details"
+	else
+		echo "${file}: OK"
+	fi
+done

@@ -24,7 +24,11 @@ to this folder, so that this folder looks something like this:
 	├── clean.sh
 	├── README.md
 	├── tests
-	│   └── input
+	│   ├── input
+	│   │   ├── jsnlry001
+	│   │   ├── jsnlry002
+	│   │   ├── ...
+	│   └── output
 	│       ├── jsnlry001
 	│       ├── jsnlry002
 	│       ├── ...
@@ -39,6 +43,14 @@ Note: I tested the bash scripts with linux only.
 To clean up everything, build the code and run all the tests you can simply run
 
 	./clean.sh && ./build.sh && ./test.sh
+
+To run a single test just use
+
+	./test-single.sh <test-name>
+
+For example:
+
+	./test-single.sh 0000
 
 
 Resources
